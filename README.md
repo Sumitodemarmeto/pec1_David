@@ -15,7 +15,7 @@
 
 ### Description
 
-> **Alumno** contiene la informacion de cada alumno;
+> &nbsp;&nbsp;&nbsp;&nbsp;**Alumno** contiene la informacion de cada alumno;
   
 ### Variables
 
@@ -38,7 +38,7 @@
 
 ### Description
 
-> **Aula** contiene los asientos disponibles y asignados, y donde se encuentra;
+> &nbsp;&nbsp;&nbsp;&nbsp;**Aula** contiene los asientos disponibles y asignados, y donde se encuentra;
   
 ### Variables
 
@@ -61,7 +61,7 @@
 
 ### Description
 
-> **Colegio** contiene las aulas que hay en el colegio y la información del colegio;
+> &nbsp;&nbsp;&nbsp;&nbsp;**Colegio** contiene las aulas que hay en el colegio y la información del colegio;
   
 ### Variables
 
@@ -77,7 +77,7 @@
 
 <summary>
 
-## **AsignarAsiento**
+### **AsignarAsiento**
 
 </summary>
 
@@ -87,15 +87,116 @@ String AsignarAsiento(Alumno alumno);
 
 ```
 
-### Descripción
+#### Descripción
 
-  > La función **AsignarAsiento()** busca entre todos los asientos de cada aula y asigna el primer asiento vacio al alumno pasado como parametro.
+  > &nbsp;&nbsp;&nbsp;&nbsp;La función **asignarAsiento()** busca entre todos los asientos de cada aula y asigna el primer asiento vacio en cualquier aula al alumno pasado como parametro.
 
-### Valor de retorno
+#### Valor de retorno
 
   - Si **_no se ha pasado ningun alumno como parametro_** : Imprime por consola **"El campo alumno no puede estar vacio."** y retorna **``null``**.
   - Si **_no hay ningun asiento vacio_** : Imprime por consola **"No hay ningun asiento disponible en ningun aula."** y retorna **``null``**.
   - Si **_hay algún asiento vacio_** : Asigna ese asiento al alumno, el aula y el asiento asignado.
+
+</details>
+  
+</details>
+<details>
+
+<summary>
+
+## **UtilsColegio**
+
+</summary>
+
+### Description
+
+> &nbsp;&nbsp;&nbsp;&nbsp;**Colegio** contiene funciones extra que nos pueden ser utiles para realizar ciertas cosas;
+  
+### Variables
+
+### Metodos
+  
+<details>
+
+<summary>
+
+### **newAlumnos**
+
+</summary>
+
+```java
+
+String newAlumnos(int cantidad);
+
+```
+
+#### Descripción
+
+  > &nbsp;&nbsp;&nbsp;&nbsp;La función **newAlumnos()** nos permite crear una nueva lista de alumnos introduciendo por consola los datos de cada alumno.
+
+#### Valor de retorno
+
+  - Devuelve un array de alumnos con los nombres, apellidos y DNI's de todos los alumnos insertados.
+
+</details>
+  
+</details>
+<details>
+
+<summary>
+
+## **GestionColegios**
+
+</summary>
+
+### Description
+
+> &nbsp;&nbsp;&nbsp;&nbsp;**GestionColegios** es la clase que contiene el metodo **_MAIN_** con el cual se crea un colegio con todas sus aulas y asientos;
+  
+### Variables
+
+### Metodos
+  
+<details>
+
+<summary>
+
+### **asignarAsientosaAlumnos**
+
+</summary>
+
+```java
+
+String asignarAsientosaAlumnos(Alumno alumnos[]);
+
+```
+
+#### Descripción
+
+  > &nbsp;&nbsp;&nbsp;&nbsp;La función **asignarAsientosaAlumnos()** le asignaremos un asiento a cada alumno de la lista de alumnos que se nos pasa como parametro.
+
+#### Valor de retorno
+
+</details>
+<details>
+
+<summary>
+
+### **MAIN**
+
+</summary>
+
+```java
+
+void main(String[] args);
+
+```
+
+#### Descripción
+
+  > &nbsp;&nbsp;&nbsp;&nbsp;La función **main()** es la funcion llamada al ejecutar el programa y, en este caso, se encarga de crear un colegio con sus respectivas aulas y una lista de alumnos los cuales serán asignados a los diferentes asientos que hay en cada aula.
+
+#### Valor de retorno
 
 </details>
   

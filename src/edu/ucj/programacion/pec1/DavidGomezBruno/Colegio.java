@@ -38,37 +38,38 @@ public class Colegio {
 		this.aulas = aulas;
 	}
 	
-//		Mediante esta función asignamos al alumno el primer asiento libre y
-//	devolvemos el asiento y el aula asignados al alumno.
-//		En caso de no haber ningun asiento libre en ningun aula mostramos el
-//	siguiente mensaje "No hay ningun asiento disponible en ningun aula".
-	public String	AsignarAsiento(Alumno alumno)
+	//		Mediante esta función asignamos al alumno el primer asiento libre en
+	//	cualquier aula y devolvemos la siguiente cadena de texto : "El alumno
+	//	con nombre : <nombreAlumno> con dni : <dniAlumno> ha sido asignado al
+	//	aula <numAula> en la planta : <plantaAula>.".
+	//		En caso de no haber ningun asiento libre en ningun aula mostramos el
+	//	siguiente mensaje "No hay ningun asiento disponible en ningun aula.".
+	//		En caso de no haber pasar ningun alumno como parametro mostramos el
+	//	siguiente mensaje "El campo alumno no puede estar vacio.".
+	public String	asignarAsiento(Alumno alumno)
 	{
 		Alumno	asientos[];
 		int		i;
 		
 		if (alumno == null)
-		{
-			System.out.println("El campo alumno no puede estar vacio.");
-			return (null);
-		}
+			return ("El campo alumno no puede estar vacio.");
 		for (Aula aula:aulas)
 		{
 			asientos = aula.getAsientos();
 			i = 0;
-			for (Alumno asiento:asientos)
-			{
-				if (asiento != null)
-				{
-					asiento = alumno;
-					aula.setAsientos(asientos);
-					return (aula.getPlanta() + "." + aula.getNumero() + "-" + i);
-				}
+			while (i < asientos.length && asientos[i] != null)
 				i++;
+			if (i < asientos.length && asientos[i] == null)
+			{
+				asientos[i] = alumno;
+				aula.setAsientos(asientos);
+				return ("El alumno con nombre : " + alumno.getNombre()
+				+ " con dni : " + alumno.getDni() + " ha sido"
+				+ "asignado al aula " + aula.getNumero() + " en la"
+				+ " planta : " + aula.getPlanta() + "." + i);
 			}
 		}
-		System.out.println("No hay ningun asiento disponible en ningun aula.");
-		return (null);
+		return ("No hay ningun asiento disponible en ningun aula.");
 	}
 
 }
