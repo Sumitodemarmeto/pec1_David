@@ -161,19 +161,19 @@ String newAlumnos(int cantidad);
 
 <summary>
 
-### **asignarAsientosaAlumnos**
+### **asignarAsientos**
 
 </summary>
 
 ```java
 
-String asignarAsientosaAlumnos(Alumno alumnos[]);
+String asignarAsientos(Alumno alumnos[]);
 
 ```
 
 #### Descripción
 
-  > &nbsp;&nbsp;&nbsp;&nbsp;La función **asignarAsientosaAlumnos()** le asignaremos un asiento a cada alumno de la lista de alumnos que se nos pasa como parametro.
+  > &nbsp;&nbsp;&nbsp;&nbsp;La función **asignarAsientos()** le asignaremos un asiento a cada alumno de la lista de alumnos que se nos pasa como parametro.
 
 #### Valor de retorno
 

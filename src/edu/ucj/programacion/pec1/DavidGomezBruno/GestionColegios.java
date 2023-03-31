@@ -7,18 +7,20 @@ public class GestionColegios {
 	//     Asignamos a cada uno de los alumnos, recibidos como parametro, un
 	// asiento libre dentro de alguna de las aulas del colegio, recibido como
 	// parametro.
-	//     En caso de no haber más asientos disponibles salimos mostrando el 
-	public static void	asignarAsientosaAlumnos(Alumno alumnos[], Colegio colegio)
+	//     Siempre mostramos por consola la salida obtenida al intentar asignar
+	// un asiento a un alumno.
+	//     En caso de no haber más asientos disponibles salimos.
+	public static void	asignarAsientos(Alumno alumnos[], Colegio colegio)
 	{
+		String	salida;
+		
 		for (Alumno alumno:alumnos)
 		{
-			if (colegio.asignarAsiento(alumno).equals("No hay ningun asiento"
+			salida = colegio.asignarAsiento(alumno);
+			System.out.println(salida);
+			if (salida.equals("No hay ningun asiento"
 					+ " disponible en ningun aula."))
-			{
-				System.out.println("No hay más asiento disponibles en ningun"
-						+ "aula.");
 				return ;
-			}
 		}
 	}
 	
@@ -45,7 +47,7 @@ public class GestionColegios {
 			System.out.println(aula.getPlanta());
 		colegio = new Colegio(args[0], args[1], aulasColegio);
 		alumnos = UtilsColegio.newAlumnos(Integer.parseInt(args[3]));
-		asignarAsientosaAlumnos(alumnos, colegio);
+		asignarAsientos(alumnos, colegio);
 	}
 
 }
